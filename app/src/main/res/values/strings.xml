@@ -1,0 +1,107 @@
+<resources>
+    <string name="app_name">Dyel</string>
+    <string name="login">Log in</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="register">Register</string>
+    <string name="click_to_login">Click to log in</string>
+    <string name="click_to_register">Click to register</string>
+    <string name="logout">Log out</string>
+    <string name="intro_screen">IntroScreen</string>
+    <string name="or_sign_in_with">Or sign in with</string>
+    <string name="dyel">dyel</string>
+    <string name="settings">Settings</string>
+    <string name="search">Search</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+    <string name="alumne">User</string>
+    <string name="posts">Posts</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string-array name="settings_array">
+        <item>Juan</item>
+        <item>María</item>
+        <item>Pepe</item>
+        <item>Kiwi</item>
+        <item>Karpathy</item>
+        <item>Jorge</item>
+        <item>kris</item>
+        <item>Fiódor</item>
+        <item>Leo</item>
+        <item>Petete</item>
+        <item>Lamh</item>
+        <item>Sonia</item>
+        <item>Baki</item>
+        <item>Paula</item>
+        <item>Xokas</item>
+        <item>Colombiano</item>
+        <item>Juan</item>
+        <item>María</item>
+        <item>Pepe</item>
+        <item>Kiwi</item>
+        <item>Karpathy</item>
+        <item>Jorge</item>
+        <item>kris</item>
+        <item>Fiódor</item>
+        <item>Leo</item>
+        <item>Petete</item>
+        <item>Lamh</item>
+        <item>Sonia</item>
+        <item>Baki</item>
+        <item>Paula</item>
+        <item>Xokas</item>
+        <item>Colombiano</item>
+        <item>Juan</item>
+        <item>María</item>
+        <item>Pepe</item>
+        <item>Kiwi</item>
+        <item>Karpathy</item>
+        <item>Jorge</item>
+        <item>kris</item>
+        <item>Fiódor</item>
+        <item>Leo</item>
+        <item>Petete</item>
+        <item>Lamh</item>
+        <item>Sonia</item>
+        <item>Baki</item>
+        <item>Paula</item>
+        <item>Xokas</item>
+        <item>Colombiano</item>
+        <item>Juan</item>
+        <item>María</item>
+        <item>Pepe</item>
+        <item>Kiwi</item>
+        <item>Karpathy</item>
+        <item>Jorge</item>
+        <item>kris</item>
+        <item>Fiódor</item>
+        <item>Leo</item>
+        <item>Petete</item>
+        <item>Lamh</item>
+        <item>Sonia</item>
+        <item>Baki</item>
+        <item>Paula</item>
+        <item>Xokas</item>
+        <item>Colombiano</item>
+        <item>Juan</item>
+        <item>María</item>
+        <item>Pepe</item>
+        <item>Kiwi</item>
+        <item>Karpathy</item>
+        <item>Jorge</item>
+        <item>kris</item>
+        <item>Fiódor</item>
+        <item>Leo</item>
+        <item>Petete</item>
+        <item>Lamh</item>
+        <item>Sonia</item>
+        <item>Baki</item>
+        <item>Paula</item>
+        <item>Xokas</item>
+        <item>Colombiano</item>
+    </string-array>
+
+
+</resources>

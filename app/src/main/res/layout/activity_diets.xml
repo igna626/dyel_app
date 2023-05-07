@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/input_nombre_comida"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:hint="Food name"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:textColorHint="@android:color/primary_text_dark" />
+
+    <EditText
+        android:id="@+id/input_kcal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:hint="Kcal"
+        android:layout_below="@id/input_nombre_comida"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:textColorHint="@android:color/primary_text_dark" />
+
+    <TextView
+        android:id="@+id/newFood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add new food"
+        android:textSize="24sp"
+        android:layout_below="@id/input_kcal"
+        android:layout_marginTop="20sp"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/add_food"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:layout_below="@id/newFood"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        ></Button>
+
+    <TextView
+        android:id="@+id/recomendation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/add_food"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20sp"
+        android:layout_marginTop="20sp"
+        android:layout_marginRight="20sp"
+        android:text="Based on your weekly intake you should try to eat:"
+        android:textAlignment="center"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/goal_kcals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2.200 kcal"
+        android:textSize="30sp"
+        android:layout_below="@id/recomendation"
+        android:layout_marginTop="5sp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/left_kcals"
+        android:layout_below="@id/goal_kcals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:textSize="20sp"
+        android:text="You still have left:"/>
+
+    <TextView
+        android:id="@+id/actual_kcals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1.500 kcal"
+        android:textSize="30sp"
+        android:layout_below="@id/left_kcals"
+        android:layout_marginTop="5sp"
+        android:layout_centerHorizontal="true"/>
+
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/actual_kcals"
+        tools:context=".DietsActivity">
+
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+</RelativeLayout>
