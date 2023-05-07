@@ -17,6 +17,7 @@ import android.widget.Toolbar;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -31,6 +32,7 @@ import android.widget.EditText;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
@@ -76,11 +78,23 @@ public class DietsActivity extends AppCompatActivity {
                 .get()
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
+                        foodList.clear();
+
+                        int currentDay = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
+
                         for (QueryDocumentSnapshot document : task.getResult()) {
                             // Obtener los datos de cada comida y agregarlos a la lista
+                            String time = document.getString("Time");
                             String food = document.getString("Food");
                             String kcals = document.getString("Kcals");
-                            String time = document.getString("Time");
+                            // check if the food is from today
+                            if (Integer.parseInt(time.substring(8, 10)) != currentDay) {
+                                System.out.println("Not today, init");
+                                System.out.println(food);
+                                continue;
+                            }
+
+
 
                             String foodInfo = "Food: " + food + "\nKcals: " + kcals + "\nTime: " + time;
                             foodList.add(foodInfo);
@@ -99,16 +113,27 @@ public class DietsActivity extends AppCompatActivity {
             // Store data in Firestore and perform other actions
             storeDataInFirestore(input1, input2);
 
+            int currentDay = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
+
             // Retrieve elements:
             db.collection("usuarios").document(userID).collection("comidas")
+                    .orderBy("Time", Query.Direction.DESCENDING) // Ordenar por "Time" de mayor a menor
                     .get()
                     .addOnCompleteListener(task -> {
                         if (task.isSuccessful()) {
+                            foodList.clear();
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 // Obtener los datos de cada comida y agregarlos a la lista
+
+                                String time = document.getString("Time");
+                                // check if the food is from today
+                                if (Integer.parseInt(time.substring(8, 10)) != currentDay){
+                                    continue;
+                                }
+
                                 String food = document.getString("Food");
                                 String kcals = document.getString("Kcals");
-                                String time = document.getString("Time");
+
 
                                 String foodInfo = "Food: " + food + "\nKcals: " + kcals + "\nTime: " + time;
                                 foodList.add(foodInfo);
@@ -117,6 +142,7 @@ public class DietsActivity extends AppCompatActivity {
                             adapter.notifyDataSetChanged();
                         }
                     });
+
         });
     }
 
@@ -126,6 +152,7 @@ public class DietsActivity extends AppCompatActivity {
         Date currentDate = new Date();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String formattedDate = dateFormat.format(currentDate);
+
         data.put("Time", formattedDate);
         data.put("Food", input1);
         data.put("Kcals", input2);

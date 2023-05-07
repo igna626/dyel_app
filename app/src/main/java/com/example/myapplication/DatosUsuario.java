@@ -7,11 +7,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.SeekBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
@@ -62,14 +64,16 @@ public class DatosUsuario extends AppCompatActivity {
         EditText edadEditText = findViewById(R.id.editTextEdad);
         EditText alturaEditText = findViewById(R.id.editTextAltura);
         EditText pesoEditText = findViewById(R.id.editTextPeso);
-        EditText nivelActividadEditText = findViewById(R.id.editTextNivelActividad);
+        SeekBar slider = findViewById(R.id.sliderBar);
+
+        slider.setMax(5);
 
         // Obtén los valores ingresados por el usuario
         String nombre = nombreEditText.getText().toString();
         int edad = Integer.parseInt(edadEditText.getText().toString());
         double altura = Double.parseDouble(alturaEditText.getText().toString());
         double peso = Double.parseDouble(pesoEditText.getText().toString());
-        int nivelActividad = Integer.parseInt(nivelActividadEditText.getText().toString());
+        int sliderValue = slider.getProgress();
 
         // Crea un mapa con los datos a guardar
         Map<String, Object> datos = new HashMap<>();
@@ -77,14 +81,18 @@ public class DatosUsuario extends AppCompatActivity {
         datos.put("edad", edad);
         datos.put("altura", altura);
         datos.put("peso", peso);
-        datos.put("nivelActividad", nivelActividad);
+        datos.put("actividad", sliderValue);
 
         // Guarda los datos en Firestore
+        // Guarda los datos en Firestore
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-        db.collection("usuarios").document(userID).set(datos)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
+        db.collection("usuarios")
+                .document(userID)
+                .collection("metricas")
+                .add(datos)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
-                    public void onSuccess(Void aVoid) {
+                    public void onSuccess(DocumentReference documentReference) {
                         Toast.makeText(getApplicationContext(), "Datos guardados exitosamente", Toast.LENGTH_SHORT).show();
                     }
                 })
@@ -95,5 +103,6 @@ public class DatosUsuario extends AppCompatActivity {
                         Log.e("Firestore", "Error al guardar los datos", e);
                     }
                 });
+
     }
 }
