@@ -9,20 +9,14 @@
 
 
 
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/photo_recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-         />
-
     <androidx.appcompat.widget.Toolbar
+        android:elevation="4dp"
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_marginLeft="20sp"
         android:layout_marginRight="20sp"
-        android:layout_marginTop="20sp"
+        android:layout_marginTop="15sp"
+        android:layout_marginBottom="15dp"
         android:layout_height="45dp"
         android:background="@drawable/rounded_background"
         android:paddingStart="0dp"
