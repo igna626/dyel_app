@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Performance"
-        android:textSize="24sp"
-        android:layout_centerInParent="true"/>
+    <com.androidplot.xy.XYPlot
+        style="@style/APDefacto.Dark"
+        android:id="@+id/plot"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        app:title="A Simple XY Plot"
+        app:rangeTitle="range"
+        app:domainTitle="domain"
+        app:lineLabels="left|bottom"
+        app:lineLabelRotationBottom="-45"/>
 
-</RelativeLayout>
+
+
+</LinearLayout>
