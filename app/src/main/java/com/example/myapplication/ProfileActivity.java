@@ -137,7 +137,7 @@ public class ProfileActivity extends AppCompatActivity {
         bottomNavigationView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.bottom_home:
-                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                     finish();
                     return true;
@@ -147,11 +147,16 @@ public class ProfileActivity extends AppCompatActivity {
                     finish();
                     return true;
                 case R.id.bottom_settings:
-                    startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
+                    startActivity(new Intent(getApplicationContext(), WorkoutsActivity.class));
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                     finish();
                     return true;
                 case R.id.bottom_profile:
+                    return true;
+                case R.id.bottom_food:
+                    startActivity(new Intent(getApplicationContext(), DietsActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
                     return true;
             }
             return false;
