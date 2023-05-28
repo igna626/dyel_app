@@ -9,14 +9,20 @@
 
 
 
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/photo_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        />
+
     <androidx.appcompat.widget.Toolbar
-        android:elevation="4dp"
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_marginLeft="20sp"
         android:layout_marginRight="20sp"
-        android:layout_marginTop="15sp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginTop="20sp"
         android:layout_height="45dp"
         android:background="@drawable/rounded_background"
         android:paddingStart="0dp"
@@ -67,10 +73,10 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="30dp"
-        android:layout_marginEnd="30dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
         android:background="@drawable/background_for_register"
         android:elevation="2dp"
         app:itemIconSize="20dp"
@@ -78,5 +84,6 @@
         app:itemRippleColor="@android:color/transparent"
         app:labelVisibilityMode="unlabeled"
         app:menu="@menu/bottom_menu" />
+
 
 </RelativeLayout>
