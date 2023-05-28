@@ -90,23 +90,6 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
-        Button dietsButton = findViewById(R.id.button1);
-        dietsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), DietsActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        Button workoutsButton = findViewById(R.id.button2);
-        workoutsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), WorkoutsActivity.class);
-                startActivity(intent);
-            }
-        });
 
         Button performanceButton = findViewById(R.id.button3);
         performanceButton.setOnClickListener(new View.OnClickListener() {

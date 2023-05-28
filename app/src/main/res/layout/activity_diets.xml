@@ -41,12 +41,12 @@
         android:id="@+id/add_food"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="+"
         android:layout_below="@id/newFood"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:textSize="20sp"
-        ></Button>
+        android:layout_marginTop="20dp"
+        android:background="@drawable/background_for_register"
+        android:text="+"
+        android:textSize="20sp"></Button>
 
     <TextView
         android:id="@+id/recomendation"
@@ -65,30 +65,30 @@
         android:id="@+id/goal_kcals"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="2.200 kcal"
-        android:textSize="30sp"
         android:layout_below="@id/recomendation"
-        android:layout_marginTop="5sp"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="7sp"
+        android:text="2.200 kcal"
+        android:textSize="25sp" />
 
     <TextView
         android:id="@+id/left_kcals"
-        android:layout_below="@id/goal_kcals"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/goal_kcals"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
-        android:textSize="20sp"
-        android:text="You still have left:"/>
+        android:layout_marginTop="15dp"
+        android:text="You still have left:"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/actual_kcals"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="1.500 kcal"
-        android:textSize="30sp"
+        android:textSize="25sp"
         android:layout_below="@id/left_kcals"
-        android:layout_marginTop="5sp"
+        android:layout_marginTop="7sp"
         android:layout_centerHorizontal="true"/>
 
     <LinearLayout
